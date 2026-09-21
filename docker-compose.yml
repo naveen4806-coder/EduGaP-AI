@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  ml-service:
+    build:
+      context: ./training
+      dockerfile: Dockerfile
+    container_name: edugap-ml-service
+    ports:
+      - "8001:8001"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: edugap-web-app
+    ports:
+      - "3000:3000"
+    environment:
+      - ML_SERVICE_URL=http://ml-service:8001
+      - NEXT_PUBLIC_SUPABASE_URL=${NEXT_PUBLIC_SUPABASE_URL:-}
+      - NEXT_PUBLIC_SUPABASE_ANON_KEY=${NEXT_PUBLIC_SUPABASE_ANON_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - FIREBASE_SERVER_KEY=${FIREBASE_SERVER_KEY:-}
+    depends_on:
+      - ml-service
+    restart: unless-stopped

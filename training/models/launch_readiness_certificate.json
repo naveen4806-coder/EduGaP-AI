@@ -1,0 +1,43 @@
+{
+  "certificate_name": "EdUGaP AI Production Model Launch Certificate",
+  "model_name": "StudentRiskMLP",
+  "model_version": "v1.0.0-production-launch",
+  "certification_date": "2026-09-21 15:55:28 UTC",
+  "status": "LAUNCH_READY",
+  "target_benchmarks_met": {
+    "accuracy_above_90_pct": true,
+    "macro_f1_above_0_85": true,
+    "sub_5ms_latency": true,
+    "zero_pii_compliance": true,
+    "torchscript_available": true
+  },
+  "metrics_summary": {
+    "test_accuracy": "96.98%",
+    "macro_f1": "0.9608",
+    "single_latency": "0.157 ms",
+    "batch_50_latency": "0.21 ms",
+    "test_records_evaluated": 2250
+  },
+  "top_risk_drivers": [
+    [
+      "weak_topics_count",
+      30.38
+    ],
+    [
+      "late_submissions_count",
+      16.21
+    ],
+    [
+      "integrity_events_count",
+      15.23
+    ],
+    [
+      "recent_assessment_score",
+      12.94
+    ],
+    [
+      "previous_assessment_avg",
+      9.11
+    ]
+  ]
+}

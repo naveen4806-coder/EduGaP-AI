@@ -1,0 +1,75 @@
+{
+  "model_version": "v1.0.0-production-launch",
+  "dataset_name": "EdUGaP-AI-UCI-OULAD-Cohort-Benchmark",
+  "total_cohort_records": 15000,
+  "train_records": 10500,
+  "val_records": 2250,
+  "test_records": 2250,
+  "feature_names": [
+    "previous_assessment_avg",
+    "recent_assessment_score",
+    "topic_wise_accuracy",
+    "quiz_completion_rate",
+    "attendance_percentage",
+    "assignment_completion_rate",
+    "study_session_completion_rate",
+    "avg_daily_study_time_minutes",
+    "late_submissions_count",
+    "integrity_events_count",
+    "weak_topics_count",
+    "assessment_attempt_count"
+  ],
+  "input_dimension": 12,
+  "target_col": "risk_level",
+  "class_mapping": {
+    "0": "Low Risk",
+    "1": "Medium Risk",
+    "2": "High Risk"
+  },
+  "class_weights": [
+    1.206480523957256,
+    1.5597147950089127,
+    0.6535947712418301
+  ],
+  "scaler_means": [
+    75.26226380952382,
+    74.78664285714287,
+    74.82828285714285,
+    78.21779904761904,
+    84.03488285714286,
+    76.69593523809525,
+    73.04667238095239,
+    60.701961904761916,
+    2.966190476190476,
+    1.3135238095238095,
+    3.5345714285714287,
+    7.443809523809524
+  ],
+  "scaler_scales": [
+    19.76206916698959,
+    22.980440865182793,
+    20.82229149628307,
+    17.63928133358421,
+    13.946980092157565,
+    19.185942427467346,
+    20.826751374438256,
+    28.818043090735728,
+    2.1313308522643917,
+    1.4908572036966043,
+    2.3786440829744553,
+    3.4698407760786183
+  ],
+  "production_ready": true,
+  "best_epoch": 30,
+  "best_val_loss": 0.09436,
+  "artifacts": {
+    "pytorch_checkpoint": {
+      "file": "student_risk_mlp.pt",
+      "sha256": "0418ed0271e44a6be95ed3513de1540d7dc099082677506d3a5246f5b9089790"
+    },
+    "torchscript": {
+      "file": "student_risk_mlp.torchscript.pt",
+      "sha256": "a4fb78cfb85947dbd53a82440a363ab99f322be5da44e9579a33edda467d36d0"
+    }
+  }
+}

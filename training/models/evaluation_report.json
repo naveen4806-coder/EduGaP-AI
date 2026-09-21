@@ -1,0 +1,122 @@
+{
+  "model_version": "v1.0.0-production-launch",
+  "production_ready": true,
+  "evaluation_dataset": "EdUGaP-AI Held-Out Test Split",
+  "test_records": 2250,
+  "accuracy": 0.9698,
+  "accuracy_pct": 96.98,
+  "macro_f1": 0.9608,
+  "macro_precision": 0.9629,
+  "macro_recall": 0.9604,
+  "per_class_metrics": {
+    "Low Risk": {
+      "precision": 1.0,
+      "recall": 0.9228,
+      "f1_score": 0.9599,
+      "support": 622
+    },
+    "Medium Risk": {
+      "precision": 0.9057,
+      "recall": 0.9584,
+      "f1_score": 0.9313,
+      "support": 481
+    },
+    "High Risk": {
+      "precision": 0.9829,
+      "recall": 1.0,
+      "f1_score": 0.9914,
+      "support": 1147
+    }
+  },
+  "confusion_matrix": [
+    [
+      574,
+      48,
+      0
+    ],
+    [
+      0,
+      461,
+      20
+    ],
+    [
+      0,
+      0,
+      1147
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Low Risk",
+    "Medium Risk",
+    "High Risk"
+  ],
+  "feature_importance_weights": {
+    "previous_assessment_avg": 9.11,
+    "recent_assessment_score": 12.94,
+    "topic_wise_accuracy": 0.0,
+    "quiz_completion_rate": 2.66,
+    "attendance_percentage": 4.83,
+    "assignment_completion_rate": 5.65,
+    "study_session_completion_rate": 3.0,
+    "avg_daily_study_time_minutes": 0.0,
+    "late_submissions_count": 16.21,
+    "integrity_events_count": 15.23,
+    "weak_topics_count": 30.38,
+    "assessment_attempt_count": 0.0
+  },
+  "latency_benchmarks": {
+    "single_prediction_latency_ms": 0.157,
+    "classroom_batch_50_latency_ms": 0.21,
+    "throughput_predictions_per_sec": 6365
+  },
+  "calibration": {
+    "Low Risk": {
+      "mean_predicted": [
+        0.0054,
+        0.2918,
+        0.5084,
+        0.7175,
+        0.9689
+      ],
+      "fraction_positives": [
+        0.0025,
+        0.7941,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "Medium Risk": {
+      "mean_predicted": [
+        0.0168,
+        0.2946,
+        0.4931,
+        0.7108,
+        0.9535
+      ],
+      "fraction_positives": [
+        0.0,
+        0.1111,
+        0.2812,
+        0.6301,
+        0.9927
+      ]
+    },
+    "High Risk": {
+      "mean_predicted": [
+        0.0147,
+        0.2892,
+        0.5199,
+        0.6949,
+        0.9871
+      ],
+      "fraction_positives": [
+        0.0,
+        0.0,
+        0.32,
+        0.75,
+        1.0
+      ]
+    }
+  }
+}
